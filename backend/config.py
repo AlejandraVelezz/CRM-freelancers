@@ -1,8 +1,18 @@
-import os
 from pydantic_settings import BaseSettings
 
-# Aquí cargamos la API Key de Groq de forma segura desde las variables de entorno (.env)
-GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 
-# Tu variable SECRET_KEY que usa la aplicación
-SECRET_KEY = os.getenv("SECRET_KEY", "Aa333216")
+class Settings(BaseSettings):
+    DB_HOST: str
+    DB_PORT: int = 3306
+    DB_USER: str
+    DB_PASSWORD: str
+    DB_NAME: str
+
+    GROQ_API_KEY: str
+    SECRET_KEY: str
+
+    class Config:
+        env_file = ".env"
+
+
+settings = Settings()
