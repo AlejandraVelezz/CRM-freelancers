@@ -4,7 +4,10 @@ from openai import OpenAI
 from app.schemas.ia import PropuestaEmailRequest, EnviarCorreoRequest
 from dotenv import load_dotenv
 from pathlib import Path
+from app.models import CorreoHistorial
+from app.database import get_db
 
+from app.models import CorreoHistorial
 # Buscamos la ruta absoluta exacta de la carpeta crm-backend para leer SU .env
 base_dir = Path(__file__).resolve().parent.parent.parent
 env_path = base_dir / ".env"

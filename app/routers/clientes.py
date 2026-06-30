@@ -3,15 +3,20 @@ from sqlalchemy.orm import Session
 from typing import List
 from datetime import datetime
 
+from app.database import get_db
+
 from app.database import (
-    get_db,
     Cliente,
-    CorreoHistorial
+    Usuario,
+    Proyecto
 )
 
-from app.schemas import (
-    ClienteResponse
+from app.models import CorreoHistorial
+
+from app.schemas.cliente import (
+    ClienteResponse,
 )
+
 
 router = APIRouter(
     prefix="/clientes",

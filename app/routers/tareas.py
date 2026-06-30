@@ -1,8 +1,9 @@
 from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.orm import Session
-from app.database import get_db, Tarea, Proyecto
+from app.database import get_db
 from pydantic import BaseModel
 from typing import Optional
+from app.models import Tarea
 
 router = APIRouter(prefix="/tareas", tags=["Tareas"])
 
