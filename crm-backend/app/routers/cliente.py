@@ -2,7 +2,6 @@ from pydantic import BaseModel, EmailStr
 from datetime import datetime
 from typing import Optional
 
-
 class ClienteCreate(BaseModel):
     nombre: str
     empresa: Optional[str] = None

@@ -3,16 +3,16 @@ from sqlalchemy.orm import Session
 from typing import List
 from datetime import datetime
 
-from app.database import get_db
+# Importaciones relativas usando puntos para subir un nivel (sale de routers/ hacia app/)
+from ..database import get_db
 
-from app.models import (
+from ..models import (
     Cliente,
     CorreoHistorial
 )
 
-from app.schemas import (
-    ClienteResponse
-)
+# Apuntamos correctamente a tu archivo cliente.py dentro de la carpeta schemas
+from ..schemas.cliente import ClienteResponse
 
 router = APIRouter(
     prefix="/clientes",
